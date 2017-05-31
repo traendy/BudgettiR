@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_element"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/ad_alert_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/danger_danger"
+        android:textColor="@android:color/holo_red_light" />
+
+    <LinearLayout
+        style="android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/ad_cancel_btn"
+            style="android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_negative"
+            android:text="@string/cancel"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/ad_accept_btn"
+            style="android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttonshape"
+            android:text="@string/accept"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+    </LinearLayout>
+</LinearLayout>

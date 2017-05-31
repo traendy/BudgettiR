@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-8.4.0_1af3e8c8b95621e707104442acf0cb0d1a52c604\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_c17e2c7846c399796744bd7f071986f9f9fc5d28\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="03e9de9eff4821cfbc472a64c38bbe977580113e">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_00b2eadcc65124756c6bd8e84ebb24b0e6bb3a16\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_da469d0277f9bf03f71ce12d580992eebc491997\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_7db6ed0f7c03891246803226f8150ccfacd74030\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_0ce812c6c473e1e112ee7cea4f1fa407b98f98ea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-8.4.0_878b860e893c43ef69fe0df9de0dad1409f3333e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d8e466deaea6acafa11d96892660caa44c460e0e">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_1e94a28815ebd3055e55f9bd0d8b82f9415aec80\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_85153070eb0a7f860ea654952da9a627c5bbb13e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_f3b841699e457b9d028de9d9e1996cdb525158bb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-8.4.0_72aefa1520d03ea4ec2b7672c71f9aa6fe6b2887\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_7e21f9f169f4870bbfa1eb618270c685b16ff6f5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_d1537f96e5d2d979851184d34f721b6bdfc94ce3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_c345142ff988f7969e9f38a2bf6e7f32366e588e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_35525c9692f8c73230e89932205ad56491dcf408\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_2f2f2dbef1b2decfe9e26083cc2e4a9c326b5602\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_9f9da3fb6a09a77bc7d2603ea30b90c354a00a7e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_5b4cd6f413968520dcab5fe9081723592a2d7987\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_09e18e6a8cde059ad371792a8a49f997ca92c552\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_2d8483e76dd1077790e39f9bcfcb8d1482a9f6e8\classes.dex" />
+    </item>
+
+</items>
