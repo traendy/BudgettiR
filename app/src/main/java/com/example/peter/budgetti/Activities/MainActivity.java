@@ -7,8 +7,10 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,6 +24,7 @@ import com.example.peter.budgetti.Adapter.CustomAdapter;
 import com.example.peter.budgetti.Classes.Expense;
 import com.example.peter.budgetti.Dialogs.AddExpenseDialog;
 import com.example.peter.budgetti.Dialogs.CustomAlertDialog;
+import com.example.peter.budgetti.Helper.StatusBarHelper;
 import com.example.peter.budgetti.R;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -129,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        new StatusBarHelper().invoke(this.getApplicationContext(), this);
         expense_list = new ArrayList<>();
 
         getSavedData();
@@ -189,6 +193,9 @@ public class MainActivity extends AppCompatActivity {
      */
     private void initElements() {
         list_view = (ListView) findViewById(R.id.list_view);
+        View layout = (View) findViewById(R.id.content);
+        ViewCompat.setNestedScrollingEnabled(list_view,true);
+        //list_view = (ListView)layout.findViewById(R.id.list_view);
         remains_view = (TextView) findViewById(R.id.remains_view);
         reset_btn = (Button) findViewById(R.id.reset_btn);
         new_btn = (Button) findViewById(R.id.new_btn);
@@ -321,6 +328,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     protected void onDestroy() {
+        super.onDestroy();
         saveArrayList();
         setBudget();
     }

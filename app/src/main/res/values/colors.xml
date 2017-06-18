@@ -10,4 +10,6 @@
     <color name="greenLight">#55aebdbb</color>
     <color name="grrenBorder">#ff99bd6b</color>
     <color name="textColor">#ffffffff</color>
+    <color name="statusbar">#a8b545</color>
+
 </resources>
