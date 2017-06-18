@@ -9,34 +9,25 @@
     android:background="#E1E2E1"
 
     >
-    <android.support.design.widget.CoordinatorLayout
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/statusbar"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        >
 
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/my_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/statusbar"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/logoView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/budgetti_logo" />
+    </android.support.v7.widget.Toolbar>
 
-
-            <android.support.v7.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@mipmap/budgetti_logo" />
-        </android.support.v7.widget.Toolbar>
-
-
-
-
-        <include layout="@layout/content_main"
-            android:id="@+id/content"/>
-
-    </android.support.design.widget.CoordinatorLayout>
     <LinearLayout
 
         android:layout_width="match_parent"
@@ -74,6 +65,7 @@
             android:textSize="18sp"
             android:padding="10dp"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/remains_layiout"
@@ -94,7 +86,17 @@
             android:padding="10dp"/>
     </LinearLayout>
 
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/remains_layiout"
+        android:layout_below="@+id/my_toolbar">
 
+        <include layout="@layout/content_main"
+            android:id="@+id/content"
+            />
+
+    </android.support.design.widget.CoordinatorLayout>
 
 
 </RelativeLayout>

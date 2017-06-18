@@ -62,7 +62,9 @@ public class ChangeBudgetDialog extends DialogFragment {
                 if (!new_budget.getText().toString().isEmpty()) {
                     MainActivity.Budget = Float.parseFloat(new_budget.getText().toString());
                     MainActivity.monthlyBudget = MainActivity.Budget;
-                    MainActivity.expense_list.clear();
+                    MainActivity.keyDates.clear();
+                    MainActivity.expenseMap.clear();
+                    //TODO abfrage ob daten gespeichert werden sollen
                     MainActivity.adapter.notifyDataSetChanged();
                     MainActivity.updateBudget();
 

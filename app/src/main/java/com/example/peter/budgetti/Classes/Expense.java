@@ -26,6 +26,14 @@ public class Expense {
     }
 
     public Expense() {
+        moment = new Moment();
+    }
+
+    public Expense(String name, float amount, int index, Moment moment) {
+        this.name = name;
+        this.amount = amount;
+        Expense.index = index;
+        this.moment = moment;
     }
 
     public static int getIndex() {
@@ -54,5 +62,9 @@ public class Expense {
 
     public Moment getMoment() {
         return moment;
+    }
+
+    public void setMoment(Moment moment) {
+        this.moment = moment;
     }
 }

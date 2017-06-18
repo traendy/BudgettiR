@@ -35,4 +35,9 @@ public class Moment {
     public String getTime() {
         return time;
     }
+
+    public Moment(String date, String time){
+        this.date =date;
+        this.time = time;
+    }
 }

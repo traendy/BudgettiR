@@ -64,7 +64,7 @@ public class AddExpenseDialog extends DialogFragment {
                 e.setName(name_edit.getText().toString());
                 e.setAmount(Float.parseFloat(amount_edit.getText().toString()));
                 MainActivity.adapter.addExpense(e);
-
+                MainActivity.adapter.notifyDataSetChanged();
                 dismiss();
             }
         });

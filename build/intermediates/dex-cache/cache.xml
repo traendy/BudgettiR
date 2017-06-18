@@ -3,75 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\peter\.android\build-cache\c1ec80f5611ba3640e772df79160a1e584ec3a87\output\jars\libs\internal_impl-24.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
-        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_4bd82d437ee907aa29e1adac49c29e9fbd0c7ec7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="9a950e26b8bc15f49daedbf245ef3f61b94ef42b">
+        sha1="edc14cc1ec4adc604ad6361904f30b84a0a9236d">
         <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_00b2eadcc65124756c6bd8e84ebb24b0e6bb3a16\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\peter\.android\build-cache\c1ec80f5611ba3640e772df79160a1e584ec3a87\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
-        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_38b0716441bab4aeb6681632f0cac99b5c0dad77\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\peter\.android\build-cache\db0bbc3b74ca592d8681098212dcd8731f3de0f8\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
-        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5b868bae659622098ed31bd080c228102e432b9c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\peter\.android\build-cache\7c6cbbfecf0237d048028314180bfca56a0857df\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
-        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_43c3388544d15aac9340f0dbde0874e812621845\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\peter\.android\build-cache\c349e854a4c361bdd0708c179b0aadeab360218c\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
-        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fc4d7ce3e052155e656e7099005f3e094ebcfecb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\peter\.android\build-cache\093be40d84370de59c51a433e10a0f35798114bc\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
-        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_70b41ab5001154861079f0c140d8513820a9838b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\peter\.android\build-cache\89da96785ab8bf70fd6b8cd44fae9afbfe4eee15\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
-        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_032de58f6d03af5a6169d6256fd44d01e48d4378\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -81,51 +18,6 @@
         revision="25.0.3"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_1e94a28815ebd3055e55f9bd0d8b82f9415aec80\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\peter\.android\build-cache\ff4d1b29f50e749f6a82e9b014cbd96421b1cc57\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="8dd49930e4f9dde1a42d37e362b9fea8b1b69c0d">
-        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7d78e047ba1b5c6c19fe1282f897659b307fa498\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\peter\.android\build-cache\853bc393ee4d61dd820dc63fe12ed84937138dfd\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
-        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7a45297a05111d344a18ae444991e4564c4f7341\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\peter\.android\build-cache\0be19ff5a935d7e3e82258b2cf6e13ba1ab0a12a\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
-        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fddd5cd7ad8e3875d3da284a807531522cc1e5af\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\peter\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
-        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.0.0_d1f2034f2e3cf982e6e6afe08cf1546bc01cb3ba\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\peter\.android\build-cache\80998bbd2131becaab8bd23c164081becb3c552c\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
-        <dex dex="C:\Users\peter\Documents\libgdx\ud405-master\udacity\Budgetti\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_efb8849c490f472a830c18df92a4dadfca4f4d2e\classes.dex" />
     </item>
 
 </items>

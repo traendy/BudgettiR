@@ -7,21 +7,23 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Layout;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ListView;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.peter.budgetti.Adapter.CustomAdapter;
+import com.example.peter.budgetti.Adapter.CustomExpandableListAdapter;
 import com.example.peter.budgetti.Classes.Expense;
+import com.example.peter.budgetti.Classes.Moment;
 import com.example.peter.budgetti.Dialogs.AddExpenseDialog;
 import com.example.peter.budgetti.Dialogs.CustomAlertDialog;
 import com.example.peter.budgetti.Helper.StatusBarHelper;
@@ -36,6 +38,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -49,15 +52,25 @@ public class MainActivity extends AppCompatActivity {
     private static final String EXPENSE_NAME = "NAME";
     private static final String EXPENSE_AMOUNT = "Amount";
     private static final String CURRENCY = " EURO";
-    public static CustomAdapter adapter;
-    public static List<Expense> expense_list;
+    private static final String DATES_LIST_NAME = "DATES1.0";
+    private static final String DATE_NAME = "DATE1.0";
+    private static final String EXPENSE_MAP_NAME = "EXPENSE_MAP1.0";
+    private static final String MOMENT_DATE_NAME = "MOMENT_DATE";
+    private static final String MOMENT_TIME_NAME = "MOMENT_TIME";
+    private static final String EXPENSE_MOMENT = "Moment";
+
+    public static CustomExpandableListAdapter adapter;
+
     public static float Budget;
     public static float monthlyBudget;
     public static boolean recentAlert = false;
     public static int mStackLevel = 0;
     static SharedPreferences prefs;
     private static TextView remains_view;
-    ListView list_view;
+    public static ExpandableListView list_view;
+    public static HashMap<String,List<Expense>> expenseMap;
+    public static List<String> keyDates;
+    private static FloatingActionButton indicatorBtn;
     Button reset_btn, new_btn;
 
     /**
@@ -72,10 +85,11 @@ public class MainActivity extends AppCompatActivity {
      * @param i list element index
      */
     public static void removeIndex(int i) {
-        adapter.remove(i);
+        String temp = keyDates.get(i);
+        expenseMap.remove(temp);
+        keyDates.remove(i);
         adapter.notifyDataSetChanged();
         updateBudget();
-
     }
 
     /**
@@ -84,21 +98,43 @@ public class MainActivity extends AppCompatActivity {
     private static void saveArrayList() {
         JSONArray jsonArray = new JSONArray();
 
-        for (Expense e : expense_list) {
+        for (String str : keyDates) {
             JSONObject object = new JSONObject();
             try {
-                object.put(EXPENSE_NAME, e.getName());
-                object.put(EXPENSE_AMOUNT, String.valueOf(e.getAmount()));
-                object.put(EXPENSE_INDEX, String.valueOf(Expense.getIndex()));
-
+                object.put(DATE_NAME, str);
             } catch (JSONException ex) {
-                Log.d("ERROR", ex.getMessage());
+                Log.e("JSON ERROR", ex.getMessage());
             }
             jsonArray.put(object);
 
         }
 
-        prefs.edit().putString(EXPENSE_LIST_NAME, jsonArray.toString()).apply();
+        JSONArray jsonMap = new JSONArray();
+
+        for(String key: keyDates){
+
+            for(Expense expense: expenseMap.get(key)){
+                JSONObject object = new JSONObject();
+                JSONObject momentObject = new JSONObject();
+                try{
+                    momentObject.put(MOMENT_DATE_NAME, expense.getMoment().getDate());
+                    momentObject.put(MOMENT_TIME_NAME, expense.getMoment().getTime());
+                    object.put(EXPENSE_INDEX, expense.getIndex());
+                    object.put(EXPENSE_NAME, expense.getName());
+                    object.put(EXPENSE_AMOUNT, expense.getAmount());
+                    object.put(EXPENSE_MOMENT, momentObject);
+                    jsonMap.put(object);
+                }catch (JSONException e){
+                    Log.e("JSON ERROR", e.getMessage());
+                }
+
+
+            }
+        }
+
+
+        prefs.edit().putString(DATES_LIST_NAME, jsonArray.toString()).apply();
+        prefs.edit().putString(EXPENSE_MAP_NAME, jsonMap.toString()).apply();
     }
 
     /**
@@ -115,8 +151,11 @@ public class MainActivity extends AppCompatActivity {
      */
     public static void updateBudget() {
         Budget = monthlyBudget;
-        for (int i = 0; i < expense_list.size(); i++) {
-            Budget -= expense_list.get(i).getAmount();
+        for (String str: keyDates) {
+            for (Expense expense: expenseMap.get(str)){
+                Budget -= expense.getAmount();
+            }
+
         }
         String str = String.valueOf(Budget) + CURRENCY;
         remains_view.setText(str);
@@ -133,7 +172,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         new StatusBarHelper().invoke(this.getApplicationContext(), this);
-        expense_list = new ArrayList<>();
+        expenseMap = new HashMap<>();
+        keyDates = new ArrayList<>();
 
         getSavedData();
 
@@ -177,29 +217,68 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        adapter = new CustomExpandableListAdapter(this, keyDates, expenseMap);
+        list_view.setAdapter(adapter);
+
+        /**
+         * TODO
+         * Wenn ich ein button in der expandable list view habe kann ich die view nicht expandieren
+         * kann das mit recycle view gemacht werden?
+         * wie kann ich sonst den indicator setzen?
+         *
+         */
+
+        list_view.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                deleteEntry(i);
+            public void onGroupExpand(int groupPosition) {
+                Toast.makeText(getApplicationContext(), "onGroupExpand", Toast.LENGTH_SHORT).show();
+                indicatorBtn.setImageResource(R.drawable.arrow_minus);
             }
         });
 
-        adapter = new CustomAdapter(this, R.layout.complex_list_item, expense_list);
-        list_view.setAdapter(adapter);
+        list_view.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
+            @Override
+            public void onGroupCollapse(int groupPosition) {
+                Toast.makeText(getApplicationContext(), "onGroupCollaps", Toast.LENGTH_SHORT).show();
+                indicatorBtn.setImageResource(R.drawable.arrow_plus);
+            }
+        });
+        //funktioniert
+        list_view.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                Toast.makeText(getApplicationContext(), "onchildclick", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
     }
 
     /**
      * initiation of the elements of the main activity
      */
     private void initElements() {
-        list_view = (ListView) findViewById(R.id.list_view);
-        View layout = (View) findViewById(R.id.content);
+        list_view = (ExpandableListView) findViewById(R.id.list_view);
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int width = metrics.widthPixels;
+        indicatorBtn = (FloatingActionButton)findViewById(R.id.floatbtn);
+        list_view.setIndicatorBounds(GetPixelFromDips(0), GetPixelFromDips(0));
+
+
         ViewCompat.setNestedScrollingEnabled(list_view,true);
-        //list_view = (ListView)layout.findViewById(R.id.list_view);
+
         remains_view = (TextView) findViewById(R.id.remains_view);
         reset_btn = (Button) findViewById(R.id.reset_btn);
         new_btn = (Button) findViewById(R.id.new_btn);
     }
+    private int GetPixelFromDips(float pixels) {
+        // Get the screen's density scale
+        final float scale = getResources().getDisplayMetrics().density;
+        // Convert the dps to pixels, based on density scale
+        return (int) (pixels * scale + 0.5f);
+    }
+
 
     /**
      * gets the List from the shared preferences
@@ -297,19 +376,46 @@ public class MainActivity extends AppCompatActivity {
      */
     private void getArrayList() {
 
-        String jsonString = prefs.getString(EXPENSE_LIST_NAME, "");
-        expense_list = new ArrayList<>();
-        try {
-            JSONArray json = new JSONArray(jsonString);
-            for (int i = 0; i < json.length(); i++) {
-                JSONObject j = json.getJSONObject(i);
-                Expense e = new Expense(j.getString(EXPENSE_NAME),
-                        Float.parseFloat(j.getString(EXPENSE_AMOUNT)),
-                        Integer.parseInt(j.getString(EXPENSE_INDEX)));
-                expense_list.add(e);
+        String jsonDatesString = prefs.getString(DATES_LIST_NAME, "");
+        keyDates = new ArrayList<>();
+        try{
+            JSONArray jsonDatesArray = new JSONArray(jsonDatesString);
+            for(int i =0; i<jsonDatesArray.length(); i++){
+                JSONObject j = jsonDatesArray.getJSONObject(i);
+                keyDates.add(j.getString(DATE_NAME));
             }
-        } catch (JSONException e) {
-            Log.d("ERROR", e.getMessage());
+        }catch (JSONException e){
+            Log.e("JSON ERROR", "Could not decode keyDates: "+ e.getMessage());
+        }
+
+
+        //TODO fill map
+
+        String jsonExpensMapString = prefs.getString(EXPENSE_MAP_NAME, "");
+        expenseMap = new HashMap<>();
+
+        try {
+            JSONArray jsonMapArray = new JSONArray(jsonExpensMapString);
+            for(int i = 0; i<jsonMapArray.length(); i++){
+                JSONObject element = jsonMapArray.getJSONObject(i);
+                JSONObject intern =  element.getJSONObject(EXPENSE_MOMENT);
+                Moment moment = new Moment(intern.getString(MOMENT_DATE_NAME),
+                        intern.getString(MOMENT_TIME_NAME));
+                String dateString = moment.getDate();
+                Expense tempExpense = new Expense(element.getString(EXPENSE_NAME),
+                        Float.valueOf(element.getString(EXPENSE_AMOUNT)),
+                        Integer.valueOf(element.getString(EXPENSE_INDEX)), moment);
+                if(!expenseMap.containsKey(dateString)){
+                    List<Expense> exList= new ArrayList<>();
+                    exList.add(tempExpense);
+                    expenseMap.put(dateString,exList);
+                }else{
+                    expenseMap.get(dateString).add(tempExpense);
+                }
+            }
+
+        }catch (JSONException e){
+            Log.e("JSON ERROR", e.getMessage());
         }
 
     }

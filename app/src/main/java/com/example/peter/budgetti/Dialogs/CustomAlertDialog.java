@@ -98,7 +98,8 @@ public class CustomAlertDialog extends DialogFragment {
                 dismiss();
                 break;
             case 2:
-                MainActivity.expense_list.clear();
+                MainActivity.keyDates.clear();
+                MainActivity.expenseMap.clear();
                 dismiss();
 
                 MainActivity.mStackLevel++;
