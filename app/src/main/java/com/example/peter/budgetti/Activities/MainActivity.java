@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     public static ExpandableListView list_view;
     public static HashMap<String,List<Expense>> expenseMap;
     public static List<String> keyDates;
-    private static FloatingActionButton indicatorBtn;
+
     Button reset_btn, new_btn;
 
     /**
@@ -220,7 +221,14 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new CustomExpandableListAdapter(this, keyDates, expenseMap);
         list_view.setAdapter(adapter);
-
+        list_view.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                deleteEntry(position);
+                adapter.notifyDataSetChanged();
+                return false;
+            }
+        });
         /**
          * TODO
          * Wenn ich ein button in der expandable list view habe kann ich die view nicht expandieren
@@ -232,26 +240,34 @@ public class MainActivity extends AppCompatActivity {
         list_view.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
             @Override
             public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getApplicationContext(), "onGroupExpand", Toast.LENGTH_SHORT).show();
-                indicatorBtn.setImageResource(R.drawable.arrow_minus);
+               // Toast.makeText(getApplicationContext(), "onGroupExpand", Toast.LENGTH_SHORT).show();
+
+
             }
         });
 
         list_view.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
             @Override
             public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getApplicationContext(), "onGroupCollaps", Toast.LENGTH_SHORT).show();
-                indicatorBtn.setImageResource(R.drawable.arrow_plus);
+                //Toast.makeText(getApplicationContext(), "onGroupCollaps", Toast.LENGTH_SHORT).show();
+
+
             }
         });
         //funktioniert
         list_view.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                Toast.makeText(getApplicationContext(), "onchildclick", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "onchildclick", Toast.LENGTH_SHORT).show();
+                //TODO delete child
+                deleteChild(groupPosition, childPosition);
+                adapter.notifyDataSetChanged();
                 return false;
             }
         });
+    }
+
+    private void deleteChild(int groupPosition, int childPosition) {
     }
 
     /**
@@ -262,7 +278,7 @@ public class MainActivity extends AppCompatActivity {
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         int width = metrics.widthPixels;
-        indicatorBtn = (FloatingActionButton)findViewById(R.id.floatbtn);
+
         list_view.setIndicatorBounds(GetPixelFromDips(0), GetPixelFromDips(0));
 
 

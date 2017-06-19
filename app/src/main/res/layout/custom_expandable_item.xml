@@ -9,19 +9,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/expandable_layout">
+        android:orientation="horizontal"
+        android:id="@+id/expandable_layout"
+        android:weightSum="2">
         <TextView
             android:id="@+id/date_today_view"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:textSize="22sp"
             android:background="#ffff89"
             android:paddingTop="10dp"
-            android:paddingLeft="70dp"
+            android:paddingLeft="40dp"
             android:paddingBottom="10dp"
             android:text="14.4.17"
             android:textStyle="bold"
+            android:layout_weight="1"
             />
 
 
@@ -29,7 +31,7 @@
 
         <TextView
             android:id="@+id/spent_today_view"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:textSize="22sp"
             android:text=""
@@ -38,21 +40,9 @@
             android:padding="10dp"
             app:layout_anchor="@id/date_today_view"
             app:layout_anchorGravity="bottom|end"
-
+            android:layout_weight="1"
 
             />
     </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatbtn"
-        style="@style/Widget.Design.FloatingActionButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        android:backgroundTint="#a0af22"
-        android:clickable="false"
-        android:src="@drawable/arrow_plus"
-        app:fabSize="mini"
-        app:layout_anchor="@id/expandable_layout"
-        app:layout_anchorGravity="center|left|end" />
-    </android.support.design.widget.CoordinatorLayout>
+</android.support.design.widget.CoordinatorLayout>

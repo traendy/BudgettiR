@@ -90,7 +90,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/remains_layiout"
-        android:layout_below="@+id/my_toolbar">
+        android:layout_below="@+id/my_toolbar"
+        android:animateLayoutChanges="true">
 
         <include layout="@layout/content_main"
             android:id="@+id/content"
