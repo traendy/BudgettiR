@@ -15,6 +15,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -198,6 +199,20 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menulayout, menu);
         return true;
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.sort_date:
+                Toast.makeText(this, "sort by date", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.sort_expense:
+                Toast.makeText(this, "sort by expense", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     /**
