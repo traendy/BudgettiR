@@ -4,6 +4,8 @@ package com.example.peter.budgetti.Activities;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -28,6 +30,8 @@ import com.example.peter.budgetti.Classes.Expense;
 import com.example.peter.budgetti.Classes.Moment;
 import com.example.peter.budgetti.Dialogs.AddExpenseDialog;
 import com.example.peter.budgetti.Dialogs.CustomAlertDialog;
+import com.example.peter.budgetti.Helper.DatabaseHelper;
+import com.example.peter.budgetti.Helper.DatabaseSource;
 import com.example.peter.budgetti.Helper.StatusBarHelper;
 import com.example.peter.budgetti.R;
 import com.google.android.gms.appindexing.Action;
@@ -42,6 +46,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import static android.webkit.ConsoleMessage.MessageLevel.LOG;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -191,6 +197,18 @@ public class MainActivity extends AppCompatActivity {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
+
+        DatabaseSource databaseSource = new DatabaseSource(this);
+        databaseSource.open();
+
+        databaseSource.createExpense("TEST", 44.22f, new Moment("test", "test"));
+        try {
+           databaseSource.createScore("Januar", 44.22f, 1999);
+        }catch (SQLiteException e){
+            Log.e( DatabaseSource.DATABASE_SOURCE_LOG_TAG, e.getMessage() );
+        }
+        databaseSource.close();
     }
 
     @Override
