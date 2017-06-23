@@ -60,6 +60,13 @@ public class DatabaseSource {
         dbHelper.close();
     }
 
+    public void addExpense(Expense e){
+        createExpense(e.getName(), e.getAmount(), e.getMoment());
+
+    }
+
+
+
     public Expense createExpense(String name, float amount, Moment moment){
         ContentValues contentValues = new ContentValues();
         contentValues.put(dbHelper.NAME_COLUMN, name);

@@ -209,6 +209,21 @@ public class MainActivity extends AppCompatActivity {
             Log.e( DatabaseSource.DATABASE_SOURCE_LOG_TAG, e.getMessage() );
         }
         databaseSource.close();
+
+        /*
+        TODO: Lade die datenbank
+        TODO: Hole den aktuellen Monat aus Tabelle Monat (Monat, Jahr, Budget, Ausgegeben)
+        TODO: Hole die Tabelle expenses passend zu dem Monat und jahr
+        TODO: also monat und jahr sind zusammen der Name der Tabelle von den jeweiligen expense tabelle
+        TODO: Rechne alle TAge und die entsprechendne Ausgaben in eine expandable view um
+        TODO: Oben anstelle Budgettie ein B, ein miniatur graph und dann option
+        TODO: klick auf graph macht den groß
+        TODO: OPtion Letzden Monate
+        TODO: klick auf monat öffnet "Mainactivity layout mit den ausgaben in dem Monat
+        TODO: Password schutz bei aufruf der app
+        TODO: Wischzeichen, fingerabdruck kurzer pin
+
+         */
     }
 
     @Override

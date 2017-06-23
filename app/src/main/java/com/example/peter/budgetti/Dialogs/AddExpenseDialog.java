@@ -10,6 +10,8 @@ import android.widget.EditText;
 
 import com.example.peter.budgetti.Activities.MainActivity;
 import com.example.peter.budgetti.Classes.Expense;
+import com.example.peter.budgetti.Helper.DatabaseHelper;
+import com.example.peter.budgetti.Helper.DatabaseSource;
 import com.example.peter.budgetti.R;
 
 /**
@@ -63,6 +65,9 @@ public class AddExpenseDialog extends DialogFragment {
                 Expense e = new Expense();
                 e.setName(name_edit.getText().toString());
                 e.setAmount(Float.parseFloat(amount_edit.getText().toString()));
+                DatabaseSource source = new DatabaseSource(getContext()); //TODO contexx
+                source.open();
+                source.addExpense(e);
                 MainActivity.adapter.addExpense(e);
                 MainActivity.adapter.notifyDataSetChanged();
                 dismiss();

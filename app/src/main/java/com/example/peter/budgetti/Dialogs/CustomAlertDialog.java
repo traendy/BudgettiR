@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.peter.budgetti.Activities.MainActivity;
+import com.example.peter.budgetti.Helper.DatabaseSource;
 import com.example.peter.budgetti.R;
 
 /**
@@ -95,6 +96,7 @@ public class CustomAlertDialog extends DialogFragment {
         switch (functionIndex) {
             case 1:
                 MainActivity.removeIndex(index);
+               //TODO delete entryfrom db
                 dismiss();
                 break;
             case 2:
